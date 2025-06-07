@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="FIRST"><pre>The prediction for the      first is</pre> <input type="number" id="t1input">kg.</div>
+<div id="FIRST">The prediction for the first is<input type="number" id="t1input">kg.</div>
 <div id="SECOND">The prediction&nbsp for the second is <input type="number" id="t2input">kg.</div>
 <div id="THIRD">The prediction for third is <input type="number" id="t3input">kg.</div>
 
@@ -58,13 +58,13 @@ function Calculate() {
 
 function GetResult() {
 
-    var sum = document.getElementById("COMBO1_OPT") + document.getElementById("COMBO2_OPT");
+    var sum = document.getElementById("COMBO1_OPT").value + document.getElementById("COMBO2_OPT").value;
     
     console.log("Initial sum" + sum);
     
     for ( let idx = 1; idx <= 3; idx++) {
     
-        sum += document.getElementById("t" + idx + "input");
+        sum += document.getElementById("t" + idx + "input").value;
         
         console.log("Sum after " + idx + "   : " + sum);
     }
