@@ -31,6 +31,7 @@
 
 <div id ="CALCULATE"><button  id="TEST_BUTTON" onClick="Test()">Test</button> <button  id="CAL_BUTTON" onClick="Calculate()">Calculate</button></div>
 
+<!-- Provide the javascript neeeded --> 
 <script id="jsbin-javascript">
 
 function Test() {
@@ -44,14 +45,14 @@ function Test() {
         testResultString = "That looks fine.";
     }
     
-    document.getElementById("RESULT_LINE").value = testResultString;
+    document.getElementById("RESULT_LINE").innerHTML = testResultString;
 }
 
 function Calculate() {
 
         let testResult = GetResult();
         
-        document.getElementById("RESULT_LINE").value = testResult;
+        document.getElementById("RESULT_LINE").innerHTML = testResult;
 }
 
 function GetResult() {
