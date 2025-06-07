@@ -7,8 +7,8 @@
 </head>
 <body>
 
-<div id="FIRST">The prediction for the first is <input type="number" id="t1input">kg.</div>
-<div id="SECOND">The prediction for the second is <input type="number" id="t2input">kg.</div>
+<div id="FIRST"><pre>The prediction for the      first is</pre> <input type="number" id="t1input">kg.</div>
+<div id="SECOND">The prediction&nbsp for the second is <input type="number" id="t2input">kg.</div>
 <div id="THIRD">The prediction for third is <input type="number" id="t3input">kg.</div>
 
 <div id="COMBO1">The first selection is <select>
@@ -20,7 +20,7 @@
  
  <div id="COMBO2">The first selection is <select>
         <option value="1"> "Zara      " </option>
-        <option value="2" ><pre>     Young</pre> </option>
+        <option value="2" >&nbsp&nbsp&nbsp Young </option>
         <option value="3">" Xo "</option>
        id="COMBO2_OPT"
  </select>.</div>
@@ -60,13 +60,13 @@ function GetResult() {
 
     var sum = document.getElementById("COMBO1_OPT") + document.getElementById("COMBO2_OPT");
     
-    log.console("Initial sum" + sum);
+    console.log("Initial sum" + sum);
     
     for ( let idx = 1; idx <= 3; idx++) {
     
         sum += document.getElementById("t" + idx + "input");
         
-        log.console("Sum after " + idx + "   : " + sum);
+        console.log("Sum after " + idx + "   : " + sum);
     }
     
     if (document.getElementById("times2box").checked) {
@@ -74,7 +74,7 @@ function GetResult() {
         sum *= 2;
     }
     
-    log.console("Returning for getresult" + sum);
+    console.log("Returning for getresult" + sum);
 
     return sum;
 }
