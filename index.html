@@ -56,13 +56,13 @@ function Calculate() {
 
 function GetResult() {
 
-    var sum = document.getElementById("COMBO1_OPT").value + document.getElementById("COMBO2_OPT").value;
+    var sum = Number(document.getElementById("COMBO1_OPT").value) + Number(document.getElementById("COMBO2_OPT").value);
     
     console.log("Initial sum" + sum);
     
     for ( let idx = 1; idx <= 3; idx++) {
     
-        sum += document.getElementById("t" + idx + "input").value;
+        sum += Number(document.getElementById("t" + idx + "input").value);
         
         console.log("Sum after " + idx + "   : " + sum);
     }
