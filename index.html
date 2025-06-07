@@ -20,7 +20,7 @@
  
  <div id="COMBO2">The first selection is <select>
         <option value="1"> "Zara      " </option>
-        <option value="2" ><pre>"     Young"</pre> </option>
+        <option value="2" ><pre>     Young</pre> </option>
         <option value="3">" Xo "</option>
        id="COMBO2_OPT"
  </select>.</div>
@@ -60,15 +60,21 @@ function GetResult() {
 
     var sum = document.getElementById("COMBO1_OPT") + document.getElementById("COMBO2_OPT");
     
+    log.console("Initial sum" + sum);
+    
     for ( let idx = 1; idx <= 3; idx++) {
     
         sum += document.getElementById("t" + idx + "input");
+        
+        log.console("Sum after " + idx + "   : " + sum);
     }
     
     if (document.getElementById("times2box").checked) {
     
         sum *= 2;
     }
+    
+    log.console("Returning for getresult" + sum);
 
     return sum;
 }
