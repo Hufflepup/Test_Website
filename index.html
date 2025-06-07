@@ -25,11 +25,55 @@
        id="COMBO2_OPT"
  </select>.</div>
 
-<div id="DOUBLE">Apply a double boost? <input type="checkbox" id="t3box" checked></div>
+<div id="DOUBLE">Apply a double boost? <input type="checkbox" id="times2box" checked></div>
 
 <BR>
 
-<div id ="CALCULATE"> <button  id="CAL_BUTTON">Calculate</button></div>
+<div id ="RESULT_LINE"> </div>
+
+<div id ="CALCULATE"><button  id="TEST_BUTTON" onClick="Test()">Test</button> <button  id="CAL_BUTTON" onClick="Calculate()">Calculate</button></div>
+
+<script id="jsbin-javascript">
+
+function Test() {
+
+    let testResult = GetResult();
+    
+    let testResultString = "That doesn't look good to me.";
+    
+    if (testResult > 100) {
+    
+        testResultString = "That looks fine.";
+    }
+    
+    document.getElementById("RESULT_LINE").value = testResultString;
+}
+
+function Calculate() {
+
+        let testResult = GetResult();
+        
+        document.getElementById("RESULT_LINE").value = testResult;
+}
+
+function GetResult() {
+
+    var sum = document.getElementById("COMBO1_OPT") + document.getElementById("COMBO2_OPT");
+    
+    for ( let idx = 1; idx <= 3; idx++) {
+    
+        sum += document.getElementById("t" + idx + "input");
+    }
+    
+    if (document.getElementById("times2box").checked) {
+    
+        sum *= 2;
+    }
+
+    return sum;
+}
+
+</script>
 
 </body>
 </html> 
